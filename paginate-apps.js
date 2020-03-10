@@ -1,0 +1,198 @@
+let apps = [
+    { "id": 1, "name": "one" },
+    { "id": 2, "name": "two" },
+    { "id": 3, "name": "three" },
+    { "id": 4, "name": "four" },
+    { "id": 5, "name": "five" },
+    { "id": 6, "name": "six" },
+    { "id": 7, "name": "seven" },
+    { "id": 8, "name": "eight" },
+    { "id": 9, "name": "nine" },
+    { "id": 10, "name": "ten" },
+    { "id": 11, "name": "eleven" },
+    { "id": 12, "name": "twelve" },
+    { "id": 13, "name": "thirteen" },
+    { "id": 14, "name": "fourteen" },
+    { "id": 15, "name": "fifteen" },
+    { "id": 16, "name": "sixteen" },
+    { "id": 17, "name": "seventeen" },
+    { "id": 18, "name": "eighteen" },
+    { "id": 19, "name": "nineteen" },
+    { "id": 20, "name": "twenty" },
+    { "id": 21, "name": "twenty one" },
+    { "id": 22, "name": "twenty two" },
+    { "id": 23, "name": "twenty three" },
+    { "id": 24, "name": "twenty four" },
+    { "id": 25, "name": "twenty five" },
+    { "id": 26, "name": "twenty six" },
+    { "id": 27, "name": "twenty seven" },
+    { "id": 28, "name": "twenty eight" },
+    { "id": 29, "name": "twenty nine" },
+    { "id": 30, "name": "thirty" },
+    { "id": 31, "name": "thirty one" },
+    { "id": 32, "name": "thirty two" },
+    { "id": 33, "name": "thirty three" },
+    { "id": 34, "name": "thirty four" },
+    { "id": 35, "name": "thirty five" },
+    { "id": 36, "name": "thirty six" },
+    { "id": 37, "name": "thirty seven" },
+    { "id": 38, "name": "thirty eight" },
+    { "id": 39, "name": "thirty nine" },
+    { "id": 40, "name": "forty" },
+    { "id": 41, "name": "forty one" },
+    { "id": 42, "name": "forty two" },
+    { "id": 43, "name": "forty three" },
+    { "id": 44, "name": "forty four" },
+    { "id": 45, "name": "forty five" },
+    { "id": 46, "name": "forty six" },
+    { "id": 47, "name": "forty seven" },
+    { "id": 48, "name": "forty eight" },
+    { "id": 49, "name": "forty nine" },
+    { "id": 50, "name": "fifty" },
+    { "id": 51, "name": "fifty one" },
+    { "id": 52, "name": "fifty two" },
+    { "id": 53, "name": "fifty three" },
+    { "id": 54, "name": "fifty four" },
+    { "id": 55, "name": "fifty five" },
+    { "id": 56, "name": "fifty six" },
+    { "id": 57, "name": "fifty seven" },
+    { "id": 58, "name": "fifty eight" },
+    { "id": 59, "name": "fifty nine" },
+    { "id": 60, "name": "sixty" },
+    { "id": 61, "name": "sixty one" },
+    { "id": 62, "name": "sixty two" },
+    { "id": 63, "name": "sixty three" },
+    { "id": 64, "name": "sixty four" },
+    { "id": 65, "name": "sixty five" },
+    { "id": 66, "name": "sixty six" },
+    { "id": 67, "name": "sixty seven" },
+    { "id": 68, "name": "sixty eight" },
+    { "id": 69, "name": "sixty nine" },
+    { "id": 70, "name": "seventy" },
+    { "id": 71, "name": "seventy one" },
+    { "id": 72, "name": "seventy two" },
+    { "id": 73, "name": "seventy three" },
+    { "id": 74, "name": "seventy four" },
+    { "id": 75, "name": "seventy five" },
+    { "id": 76, "name": "seventy six" },
+    { "id": 77, "name": "seventy seven" },
+    { "id": 78, "name": "seventy eight" },
+    { "id": 79, "name": "seventy nine" },
+    { "id": 80, "name": "eighty" },
+    { "id": 81, "name": "eighty one" },
+    { "id": 82, "name": "eighty two" },
+    { "id": 83, "name": "eighty three" },
+    { "id": 84, "name": "eighty four" },
+    { "id": 85, "name": "eighty five" },
+    { "id": 86, "name": "eighty six" },
+    { "id": 87, "name": "eighty seven" },
+    { "id": 88, "name": "eighty eight" },
+    { "id": 89, "name": "eighty nine" },
+    { "id": 90, "name": "ninety" },
+    { "id": 91, "name": "ninety one" },
+    { "id": 92, "name": "ninety two" },
+    { "id": 93, "name": "ninety three" },
+    { "id": 94, "name": "ninety four" },
+    { "id": 95, "name": "ninety five" },
+    { "id": 96, "name": "ninety six" },
+    { "id": 97, "name": "ninety seven" },
+    { "id": 98, "name": "ninety eight" },
+    { "id": 99, "name": "ninety nine" },
+    { "id": 100, "name": "one hundred" }
+]
+
+function getIndex(by, start) {
+    var value
+
+    if (by === 'id') {
+        start = Number(start)
+    }
+
+    for (let i = 0; i < apps.length; i++) {
+        var app = apps[i]
+
+        if (by === 'id' && app.id === start) {
+            value = i
+            break
+        }
+
+        if (by === 'name' && app.name === start) {
+            value = i
+            break
+        }
+    }
+
+    return value + 1
+}
+
+function paginateApps(by, start, end, max, order) {
+    if (!by) {
+        return ['The "by" query param is required']
+    }
+
+    if (by !== 'id' && by !== 'name') {
+        return ['The "by" query param only accepts "id" or "name"']
+    }
+
+    var max = Number(max || 50)
+
+    if (!start && !end) {
+        start = 1
+        end = apps.length
+    }
+
+    if (start && end) {
+        start = getIndex(by, start)
+        end = getIndex(by, end)
+    }
+
+    if (start && !end) {
+        start = getIndex(by, start)
+        end = apps.length
+    }
+
+    if (!start && end) {
+        start = 1
+        end = getIndex(by, end)
+    }
+
+    if (max > 50) {
+        max = 50
+    }
+
+    var filteredApps = []
+
+    for (let i = start - 1; i < end; i++) {
+        var app = apps[i]
+
+        filteredApps.push(app)
+
+        if (filteredApps.length === max) {
+            break
+        }
+    }
+
+    var allowedOrders = ['asc', 'desc']
+
+    if (allowedOrders.includes(order)) {
+        var isAsc = order === 'asc'
+
+        var sorter = (a, b) => {
+            if (a[by] < b[by]) {
+                return isAsc ? -1 : 1
+            }
+
+            if (a[by] > b[by]) {
+                return isAsc ? 1 : -1
+            }
+
+            return 0;
+        }
+
+        filteredApps.sort(sorter)
+    }
+
+    return filteredApps
+}
+
+module.exports = paginateApps
