@@ -1,6 +1,6 @@
 # mdlive-challenge
 
-**Setup:**
+**Setup**
 
 1. Clone the repository:
 `git clone https://github.com/apomarn/mdlive-challenge.git`
