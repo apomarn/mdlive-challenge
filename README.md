@@ -1,17 +1,19 @@
 # mdlive-challenge
 
-**Setup**
+## Setup
 
 Clone the repository:
+
 `git clone https://github.com/apomarn/mdlive-challenge.git`
 
-Install dependencies
+Install dependencies:
+
 ```
 npm i
 ```
 
+Run the app:
 
-Run the app: 
 ```
 npm run dev
 ```
@@ -29,12 +31,13 @@ examples:
 `localhost:3000/?by="name"&start=two&end=five&order=desc`
 
 
-Run the tests:
+Run the tests
+
 ```
 npm run test
 ```
 
-**Solution**
+## Solution
 
 I implemented an algorithm to require the "by" query param and to specifically be named by "name" and "id".
 
