@@ -22,13 +22,13 @@ you can then go to your browser and send query params to the `/apps` endpoint
 
 examples:
 
-`localhost:3000/?by="id"`
+`localhost:3000/apps?by=id`
 
-`localhost:3000/?by="id"&start=10&end=30`
+`localhost:3000/apps?by=id&start=10&end=30`
 
-`localhost:3000/?by="id"&max=40`
+`localhost:3000/apps?by=id&max=40`
 
-`localhost:3000/?by="name"&start=two&end=five&order=desc`
+`localhost:3000/apps?by=name&start=two&end=five&order=desc`
 
 
 Run the tests
