@@ -2,16 +2,16 @@
 
 **Setup**
 
-1. Clone the repository:
+Clone the repository:
 `git clone https://github.com/apomarn/mdlive-challenge.git`
 
-2. Install dependencies
+Install dependencies
 ```
 npm i
 ```
 
 
-3. Run the app: 
+Run the app: 
 ```
 npm run dev
 ```
@@ -29,7 +29,7 @@ examples:
 `localhost:3000/?by="name"&start=two&end=five&order=desc`
 
 
-4. Run the tests:
+Run the tests:
 ```
 npm run test
 ```
